@@ -24,7 +24,10 @@
         cj.Ticker.setFPS(60);
         cj.Ticker.addEventListener('tick', tickHandler);
 
-        cj.Tween.get(circle).to({alpha: 1, scaleX: 2, scaleY: 2}, 5000);
+        cj.Tween.get(circle, {loop: true}).to({alpha: 1, scaleX: 2, scaleY: 2}, 3000)
+                .wait(1000)
+                .to({alpha: 0, scaleX: 0, scaleY: 0}, 2000)
+                .wait(1000);
     }
 
     function tickHandler(event) {
