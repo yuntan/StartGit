@@ -8,7 +8,7 @@
         circle = new cj.Shape();
         circle.graphics.beginFill('red').drawCircle(0, 0, 50).endFill();
         // 円の中心の座標を指定
-        circle.x = 50; circle.y = 50;
+        circle.x = 150; circle.y = 250;
         circle.scaleX = 0; circle.scaleY = 0;
         circle.alpha = 0;
         stage.addChild(circle);
@@ -24,6 +24,7 @@
         cj.Ticker.setFPS(60);
         cj.Ticker.addEventListener('tick', tickHandler);
 
+        // 円のアニメーション
         cj.Tween.get(circle, {loop: true}).to({alpha: 1, scaleX: 2, scaleY: 2}, 3000)
                 .wait(1000)
                 .to({alpha: 0, scaleX: 0, scaleY: 0}, 2000)
